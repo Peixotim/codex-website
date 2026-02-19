@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     siteName: "Codex Educação e Marketing",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/codex-og.png",
         width: 1200,
         height: 630,
         alt: "Codex Educação e Marketing"

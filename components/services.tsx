@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, CheckCircle2, ArrowRight, Smartphone, LineChart, Globe, Zap, Target, Rocket } from 'lucide-react';
+import { X, CheckCircle2, ArrowRight, Smartphone, LineChart, Globe, Zap, Target, Rocket,Layers } from 'lucide-react';
 
 const servicesData = [
   {
@@ -10,45 +10,90 @@ const servicesData = [
     icon: <Smartphone size={32} strokeWidth={1.5} />,
     tag: "Recuperação & Escala",
     title: "Funis de Automação & WhatsApp",
-    shortDesc: "Transforme leads em alunos e clientes fiéis. Automação inteligente para qualificar contatos e vender todos os dias.",
-    valueProp: "Chega de perder vendas de carrinho abandonado ou mensagens ignoradas. Criamos funis automatizados que engajam seu público e preparam o lead perfeitamente para a conversão.",
+    shortDesc: "Transforme leads em alunos e clientes fiéis com inteligência artificial e jornadas de compra automatizadas.",
+    valueProp: "Otimizamos seu tempo e aumentamos sua margem de lucro. Criamos funis que engajam, qualificam e vendem 24h por dia, sem depender de esforço manual constante.",
     features: [
-      { title: "Recuperação de Vendas", desc: "Fluxos automáticos para carrinhos abandonados e boletos/PIX não pagos." },
-      { title: "Chatbots de Qualificação", desc: "Filtramos curiosos e passamos apenas os leads quentes para o seu time comercial." },
-      { title: "Engajamento em Lançamentos", desc: "Automações de lembretes para CPLs (aulas) e abertura de carrinho via WhatsApp." }
+      { title: "Recuperação de Vendas", desc: "Fluxos inteligentes para resgate de carrinhos, boletos e PIX pendentes." },
+      { title: "Triagem Automatizada", desc: "IA para qualificar o lead e entregar apenas os clientes 'quentes' para o seu comercial." },
+      { title: "Escala em Lançamentos", desc: "Distribuição de conteúdo e lembretes estratégicos para maximizar o comparecimento." }
     ],
     metric: "+40%",
-    metricLabel: "Conversão de leads retidos"
+    metricLabel: "Em conversão de leads"
   },
   {
     id: 2,
     icon: <LineChart size={32} strokeWidth={1.5} />,
     tag: "Performance",
     title: "Tráfego Pago & Captação",
-    shortDesc: "Captação de leads qualificados para lançamentos e funis perpétuos com o menor Custo por Aquisição (CPA) possível.",
-    valueProp: "Compramos tráfego com inteligência. Nossas campanhas encontram o comprador ideal para o seu infoproduto ou mentoria, escalando seu retorno com previsibilidade matemática.",
+    shortDesc: "Domine o leilão com campanhas agressivas focadas em custo por lead baixo e alta taxa de conversão.",
+    valueProp: "Não compramos apenas cliques, compramos dados e ROI. Encontramos o seu comprador ideal no Meta, Google e TikTok com segmentação de elite.",
     features: [
-      { title: "Estratégia para Lançamentos", desc: "Captação em massa de leads qualificados para eventos e webinários." },
-      { title: "Escala no Perpétuo", desc: "Campanhas contínuas no Meta e Google Ads focadas em ROI diário." },
-      { title: "Engenharia de Dados", desc: "Tagueamento avançado, Pixel blindado e API de conversões configuradas perfeitamente." }
+      { title: "Gestão de Lançamentos", desc: "Captação massiva de leads para eventos com foco em escala e baixo custo." },
+      { title: "Escala no Perpétuo", desc: "Campanhas contínuas otimizadas para gerar lucro consistente todos os dias." },
+      { title: "Data Analytics", desc: "Pixel, API de Conversão e Tracking avançado para o algoritmo trabalhar para você." }
     ],
-    metric: "3x",
-    metricLabel: "Aumento médio em ROAS"
+    metric: "3.5x",
+    metricLabel: "Média de ROAS atingido"
   },
   {
     id: 3,
     icon: <Globe size={32} strokeWidth={1.5} />,
     tag: "Alta Conversão",
     title: "Páginas de Vendas & Infra",
-    shortDesc: "Landing pages e infraestruturas tecnológicas desenhadas com neurodesign para converter visitantes em compradores.",
-    valueProp: "A sua página de vendas é o seu melhor vendedor. Desenvolvemos ecossistemas ultrarrápidos que elevam a percepção de valor do seu produto ao topo do mercado.",
+    shortDesc: "Landing pages de alto padrão desenvolvidas com neurodesign para guiar o usuário até o checkout.",
+    valueProp: "A sua página é a sua vitrine de luxo. Criamos ecossistemas que carregam em milissegundos e elevam a percepção de valor do seu produto digital.",
     features: [
-      { title: "Páginas de Alta Conversão", desc: "Design focado em guiar o olho do usuário para o checkout, aplicando gatilhos mentais." },
-      { title: "Performance Extrema (Next.js)", desc: "Sites que carregam em milissegundos, evitando a fuga de leads na página de captura." },
-      { title: "Integração com Checkouts", desc: "Conexão perfeita com Hotmart, Kiwify, Eduzz e CRMs de mercado." }
+      { title: "Neurodesign de Vendas", desc: "Layouts que aplicam gatilhos mentais visuais para aumentar a taxa de conversão." },
+      { title: "Tecnologia Next.js", desc: "Performance extrema: sites ultrarrápidos que reduzem a fuga de leads." },
+      { title: "Integração Full-Stack", desc: "Conexão direta com checkouts (Kiwify, Hotmart) e sistemas de CRM." }
     ],
-    metric: "-80%",
-    metricLabel: "No tempo de carregamento"
+    metric: "-85%",
+    metricLabel: "Taxa de rejeição por lentidão"
+  },
+  {
+    id: 4,
+    icon: <Zap size={32} strokeWidth={1.5} />,
+    tag: "Persuasão",
+    title: "Copywriting & Estratégia",
+    shortDesc: "Textos que vendem sem parecer que estão vendendo. Comunicação assertiva para quebrar qualquer objeção.",
+    valueProp: "Palavras certas geram faturamento. Criamos toda a narrativa do seu negócio para criar desejo imediato e transformar estranhos em advogados da marca.",
+    features: [
+      { title: "Narrativas de Lançamento", desc: "VSLs, CPLs e e-mails desenhados para construir antecipação e pico de vendas." },
+      { title: "Copy para Anúncios", desc: "Criativos impossíveis de ignorar, focados no clique e na curiosidade do lead." },
+      { title: "Posicionamento de Autoridade", desc: "Ajuste na comunicação para te tornar o número 1 no seu nicho de atuação." }
+    ],
+    metric: "2x",
+    metricLabel: "Aumento em CTR de anúncios"
+  },
+  {
+    id: 5,
+    icon: <Rocket size={32} strokeWidth={1.5} />,
+    tag: "Audiovisual",
+    title: "Vibe & Vídeos que Vendem",
+    shortDesc: "Edição dinâmica e cinematográfica para Reels, VSLs e anúncios que retêm a atenção até o último segundo.",
+    valueProp: "Em um mundo de distrações, a atenção é a moeda mais cara. Entregamos vídeos com alto valor de produção para o seu produto brilhar na tela.",
+    features: [
+      { title: "Edição de Alto Impacto", desc: "Ritmo frenético e elementos visuais que aumentam drasticamente o tempo de retenção." },
+      { title: "Vídeos de Vendas (VSL)", desc: "Produção técnica focada na estrutura de vendas: Gancho, História e Oferta." },
+      { title: "Ads Criativos", desc: "Vídeos curtos desenhados especificamente para converter no Meta e TikTok." }
+    ],
+    metric: "+60%",
+    metricLabel: "Retenção de visualização"
+  },
+  {
+    id: 6,
+    icon: <Layers size={32} strokeWidth={1.5} />,
+    tag: "Premium",
+    title: "Design & Social Media de Elite",
+    shortDesc: "Design System completo e gestão de redes sociais focado em autoridade e presença de mercado.",
+    valueProp: "Design não é apenas estética, é confiança. Transformamos o visual da sua marca para que ela respire profissionalismo e alto ticket.",
+    features: [
+      { title: "Identidade Visual SaaS", desc: "Estética minimalista e premium aplicada em todos os seus pontos de contato." },
+      { title: "Gestão Estratégica", desc: "Planejamento de conteúdo que educa o público e prepara para a venda." },
+      { title: "Social Proof Design", desc: "Organização visual de depoimentos e resultados para gerar autoridade imediata." }
+    ],
+    metric: "10/10",
+    metricLabel: "Nível de percepção de marca"
   }
 ];
 

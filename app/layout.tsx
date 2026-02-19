@@ -1,24 +1,18 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono , Plus_Jakarta_Sans, Sora} from "next/font/google";
+import { Sora, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
+// Fontes configuradas para o padrão premium
 const sora = Sora({
-  subsets:['latin'],
-  variable:"--font-sora"
-})
+  subsets: ['latin'],
+  variable: "--font-sora"
+});
 
-const jakarta = Plus_Jakarta_Sans({ subsets: ['latin'] });
+const jakarta = Plus_Jakarta_Sans({ 
+  subsets: ['latin'],
+  variable: "--font-jakarta" 
+});
 
 export const metadata: Metadata = {
   title: "Codex",
@@ -31,9 +25,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-br">
+    <html lang="pt-br" className="scroll-smooth">
       <body
-        className={`${sora.variable} font-sans`} //${geistSans.variable} ${geistMono.variable} antialiased
+        className={`${jakarta.variable} ${sora.variable} font-sans antialiased bg-[#000000] text-white`}
       >
         <Header/>
         {children}

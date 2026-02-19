@@ -64,7 +64,7 @@ export default function Header() {
           href="https://wa.me/5531989774224"
           target="_blank"
           rel="noopener noreferrer"
-          className="hidden md:flex items-center gap-2 bg-[#0000FF] text-[#FFFFFF] px-6 py-2.5 rounded-full font-medium transition-all duration-300 hover:bg-[#3333FF] hover:shadow-[0_0_20px_-3px_rgba(0,0,255,0.5)] hover:-translate-y-0.5"
+          className="hidden md:flex items-center gap-2 bg-[#0000FF] text-[#FFFFFF] px-6 py-2.5 rounded-full font-medium transition-all duration-300 hover:bg-white hover:text-black hover:-translate-y-0.10"
         >
           <MessageCircle size={18} />
           Falar no WhatsApp

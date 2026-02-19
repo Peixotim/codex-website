@@ -5,7 +5,6 @@ import Link from 'next/link';
 import { ArrowLeft, Scale, FileText, ShieldAlert, CheckCircle2 } from 'lucide-react';
 import React from 'react';
 
-// Variantes de Animação
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 30 },
   visible: { 
@@ -23,7 +22,6 @@ const staggerContainer: Variants = {
   }
 };
 
-// Componente para revelar as seções no Scroll
 const AnimatedSection = ({ children, delay = 0, id }: { children: React.ReactNode, delay?: number, id?: string }) => (
   <motion.div
     id={id}
@@ -41,7 +39,6 @@ const AnimatedSection = ({ children, delay = 0, id }: { children: React.ReactNod
 export default function TermsPage() {
   const lastUpdated = "19 de Fevereiro de 2026"; 
 
-  // Menu lateral para navegação rápida
   const tableOfContents = [
     { id: "aceitacao", title: "01. Aceitação dos Termos" },
     { id: "escopo", title: "02. Escopo dos Serviços" },
@@ -52,13 +49,10 @@ export default function TermsPage() {
   return (
     <main className="min-h-screen bg-[#000000] text-gray-300 pt-32 pb-40 relative overflow-hidden">
       
-      {/* BACKGROUND VIVO DA PÁGINA LEGAL */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_100%_at_50%_0%,#000_40%,transparent_100%)] pointer-events-none z-0"></div>
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-size-[4rem_4rem] mask-[radial-gradient(ellipse_80%_100%_at_50%_0%,#000_40%,transparent_100%)] pointer-events-none z-0"></div>
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-[#0000FF]/15 rounded-full blur-[150px] pointer-events-none z-0"></div>
 
       <div className="container mx-auto px-6 max-w-7xl relative z-10">
-        
-        {/* BOTÃO DE VOLTAR PREMIUM */}
         <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} className="mb-12">
           <Link href="/" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-md text-sm font-medium text-gray-400 hover:text-white hover:bg-white/10 transition-all duration-300 group">
             <ArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" /> Voltar para o início
@@ -67,7 +61,6 @@ export default function TermsPage() {
 
         <div className="flex flex-col lg:flex-row gap-16 lg:gap-24">
           
-          {/* ESQUERDA: SIDEBAR / TABLE OF CONTENTS (Sticky) */}
           <aside className="hidden lg:flex flex-col w-72 shrink-0 sticky top-32 h-fit">
             <motion.div variants={staggerContainer} initial="hidden" animate="visible">
               <motion.div variants={fadeInUp} className="w-14 h-14 rounded-2xl bg-[#0000FF]/10 border border-[#0000FF]/20 flex items-center justify-center text-[#0000FF] mb-8 shadow-[0_0_30px_rgba(0,0,255,0.15)]">
@@ -78,7 +71,6 @@ export default function TermsPage() {
                 Atualizado em {lastUpdated}
               </motion.p>
 
-              {/* Links do Sumário */}
               <nav className="flex flex-col gap-3 border-l border-white/10 pl-4">
                 {tableOfContents.map((item, index) => (
                   <motion.a 
@@ -94,19 +86,17 @@ export default function TermsPage() {
             </motion.div>
           </aside>
 
-          {/* DIREITA: CONTEÚDO DO DOCUMENTO */}
           <div className="flex-1 max-w-3xl">
             
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="mb-16">
               <h1 className="text-5xl md:text-6xl font-extrabold text-white tracking-tighter mb-6 leading-[1.1]">
-                Nossas regras <br /> de <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-[#0000FF]">excelência.</span>
+                Nossas regras <br /> de <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-400 to-[#0000FF]">excelência.</span>
               </h1>
               <p className="text-xl text-gray-400 font-light leading-relaxed">
                 A transparência é a base de grandes ecossistemas. Leia atentamente as condições que regem a nossa infraestrutura e parceria.
               </p>
             </motion.div>
 
-            {/* SEÇÕES FORMATADAS MANUALMENTE PARA O "SAAS LOOK" */}
             <div className="space-y-4">
               
               <AnimatedSection id="aceitacao">
@@ -145,9 +135,8 @@ export default function TermsPage() {
               </AnimatedSection>
 
               <AnimatedSection>
-                {/* HIGHLIGHT BOX (Nota Importante) - Nível Raycast/Linear */}
                 <div className="relative overflow-hidden my-16 p-8 md:p-10 rounded-[2.5rem] bg-[#050505] border border-white/10 shadow-[0_20px_60px_-15px_rgba(0,0,255,0.2)] group">
-                  <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-[#0000FF]/20 to-transparent rounded-full blur-3xl pointer-events-none opacity-50 group-hover:opacity-100 transition-opacity duration-700"></div>
+                  <div className="absolute top-0 right-0 w-64 h-64 bg-linear-to-bl from-[#0000FF]/20 to-transparent rounded-full blur-3xl pointer-events-none opacity-50 group-hover:opacity-100 transition-opacity duration-700"></div>
                   
                   <div className="relative z-10 flex flex-col md:flex-row gap-6 items-start">
                     <div className="w-14 h-14 rounded-2xl bg-[#0000FF] flex items-center justify-center text-white shrink-0 shadow-[0_0_30px_rgba(0,0,255,0.4)]">
@@ -199,9 +188,6 @@ export default function TermsPage() {
                     <FileText size={20} />
                     <span className="text-sm font-medium uppercase tracking-widest">Documento Oficial</span>
                   </div>
-                  <a href="mailto:legal@codex.com" className="text-sm font-semibold text-[#0000FF] hover:text-white transition-colors py-2 px-6 rounded-full bg-[#0000FF]/10 hover:bg-[#0000FF] border border-[#0000FF]/20 hover:border-[#0000FF]">
-                    Dúvidas? legal@codex.com
-                  </a>
                 </div>
               </AnimatedSection>
 

@@ -5,19 +5,23 @@ import { ShieldCheck } from 'lucide-react';
 import Image from 'next/image';
 
 const partnersRow1 = [
-  { id: 1, name: "Empresa 1", logo: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=128&h=128&fit=crop&auto=format" },
-  { id: 2, name: "Empresa 2", logo: "https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=128&h=128&fit=crop&auto=format" },
-  { id: 3, name: "Empresa 3", logo: "https://images.unsplash.com/photo-1611162618071-b39a2ec055ce?w=128&h=128&fit=crop&auto=format" },
-  { id: 4, name: "Empresa 4", logo: "https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=128&h=128&fit=crop&auto=format" },
-  { id: 5, name: "Empresa 5", logo: "https://images.unsplash.com/photo-1614850523296-d8c1af93d400?w=128&h=128&fit=crop&auto=format" },
+  { id: 1, name: "Empresa 1", logo: "/logos/logo1.png" },
+  { id: 2, name: "Empresa 2", logo: "/logos/logo2.png" },
+  { id: 3, name: "Empresa 1", logo: "/logos/logo3.png" },
+  { id: 4, name: "Empresa 2", logo: "/logos/logo4.png" },
+  { id: 5, name: "Empresa 2", logo: "/logos/logo5.png" },
+  { id: 6, name: "Empresa 2", logo: "/logos/logo6.png" },
+  { id: 7, name: "Empresa 2", logo: "/logos/logo7.png" },
 ];
 
 const partnersRow2 = [
-  { id: 6, name: "Empresa 6", logo: "https://images.unsplash.com/photo-1614850523459-c2f4c699c52e?w=128&h=128&fit=crop&auto=format" },
-  { id: 7, name: "Empresa 7", logo: "https://images.unsplash.com/photo-1599305090598-fe179d501227?w=128&h=128&fit=crop&auto=format" },
-  { id: 8, name: "Empresa 8", logo: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=128&h=128&fit=crop&auto=format" },
-  { id: 9, name: "Empresa 9", logo: "https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=128&h=128&fit=crop&auto=format" },
-  { id: 10, name: "Empresa 10", logo: "https://images.unsplash.com/photo-1611162618071-b39a2ec055ce?w=128&h=128&fit=crop&auto=format" },
+  { id: 9, name: "Empresa 2", logo: "/logos/logo8.png" },
+  { id: 10, name: "Empresa 1", logo: "/logos/logo9.png" },
+  { id: 11, name: "Empresa 2", logo: "/logos/logo10.png" },
+  { id: 12, name: "Empresa 2", logo: "/logos/logo11.png" },
+  { id: 13, name: "Empresa 2", logo: "/logos/logo12.png" },
+  { id: 14, name: "Empresa 2", logo: "/logos/logo13.png" },
+  { id: 15, name: "Empresa 2", logo: "/logos/logo14.png" },
 ];
 
 export default function Clients() {
@@ -44,8 +48,6 @@ export default function Clients() {
           display: flex;
           width: max-content;
         }
-        
-        /* Removido o efeito de pause/slow no hover para garantir a continuidade absoluta */
       `}</style>
 
       <div className="container mx-auto px-6 max-w-7xl relative z-10 mb-16 text-center">
@@ -64,20 +66,23 @@ export default function Clients() {
         </motion.div>
       </div>
 
-      <div className="relative w-full overflow-hidden mask-[linear-gradient(to_right,transparent,black_15%,black_85%,transparent)]">
+      <div className="relative w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_15%,black_85%,transparent)]">
         
         <div className="animate-scroll-left gap-6 mb-8 px-3">
           {[...partnersRow1, ...partnersRow1, ...partnersRow1, ...partnersRow1].map((partner, index) => (
             <div 
               key={index}
-              className="shrink-0 w-44 md:w-60 h-24 md:h-28 bg-[#FDFDFD] border border-gray-100 rounded-3xl flex items-center justify-center p-8 transition-all duration-500 hover:shadow-xl hover:shadow-blue-500/5 hover:border-blue-100 group mx-3"
+              /* Removemos o p-8 daqui para controlar o tamanho apenas na div interna */
+              className="shrink-0 w-48 md:w-64 h-24 md:h-28 bg-[#FDFDFD] border border-gray-100 rounded-3xl flex items-center justify-center transition-all duration-500 hover:shadow-xl hover:shadow-blue-500/5 hover:border-blue-100 group mx-3"
             >
-              <div className="relative w-full h-full transition-transform duration-500 group-hover:scale-110">
+              {/* ZONA SEGURA DA LOGO: Fixamos uma largura e altura máxima (w-32 e h-12) */}
+              <div className="relative w-28 md:w-36 h-10 md:h-12 transition-transform duration-500 group-hover:scale-110">
                  <Image 
                    src={partner.logo} 
                    alt={partner.name}
                    fill
                    className="object-contain"
+                   sizes="(max-width: 768px) 112px, 144px"
                  />
               </div>
             </div>
@@ -88,14 +93,17 @@ export default function Clients() {
           {[...partnersRow2, ...partnersRow2, ...partnersRow2, ...partnersRow2].map((partner, index) => (
             <div 
               key={index}
-              className="shrink-0 w-44 md:w-60 h-24 md:h-28 bg-[#FDFDFD] border border-gray-100 rounded-3xl flex items-center justify-center p-8 transition-all duration-500 hover:shadow-xl hover:shadow-blue-500/5 hover:border-blue-100 group mx-3"
+              /* Mesma lógica para a linha de baixo */
+              className="shrink-0 w-48 md:w-64 h-24 md:h-28 bg-[#FDFDFD] border border-gray-100 rounded-3xl flex items-center justify-center transition-all duration-500 hover:shadow-xl hover:shadow-blue-500/5 hover:border-blue-100 group mx-3"
             >
-              <div className="relative w-full h-full transition-transform duration-500 group-hover:scale-110">
+              {/* ZONA SEGURA DA LOGO */}
+              <div className="relative w-28 md:w-36 h-10 md:h-12 transition-transform duration-500 group-hover:scale-110">
                  <Image 
                    src={partner.logo} 
                    alt={partner.name}
                    fill
                    className="object-contain"
+                   sizes="(max-width: 768px) 112px, 144px"
                  />
               </div>
             </div>

@@ -33,14 +33,19 @@ export default function Clients() {
           0% { transform: translateX(-50%); }
           100% { transform: translateX(0); }
         }
-        .animate-scroll-left { animation: scroll-left 50s linear infinite; }
-        .animate-scroll-right { animation: scroll-right 50s linear infinite; }
-        
-        /* Reduz a velocidade para 20% ao passar o mouse em vez de parar */
-        .marquee-container:hover .animate-scroll-left,
-        .marquee-container:hover .animate-scroll-right {
-          animation-duration: 250s; 
+        /* Animação contínua e linear para evitar trancos */
+        .animate-scroll-left { 
+          animation: scroll-left 40s linear infinite; 
+          display: flex;
+          width: max-content;
         }
+        .animate-scroll-right { 
+          animation: scroll-right 40s linear infinite; 
+          display: flex;
+          width: max-content;
+        }
+        
+        /* Removido o efeito de pause/slow no hover para garantir a continuidade absoluta */
       `}</style>
 
       <div className="container mx-auto px-6 max-w-7xl relative z-10 mb-16 text-center">
@@ -59,13 +64,15 @@ export default function Clients() {
         </motion.div>
       </div>
 
-      <div className="relative w-full marquee-container mask-[linear-gradient(to_right,transparent,black_15%,black_85%,transparent)]">
-
-        <div className="flex w-max animate-scroll-left gap-6 mb-8 px-6">
-          {[...partnersRow1, ...partnersRow1, ...partnersRow1].map((partner, index) => (
+      {/* Máscara de transparência nas bordas melhorada para suavidade visual */}
+      <div className="relative w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_15%,black_85%,transparent)]">
+        
+        {/* LINHA 1 */}
+        <div className="animate-scroll-left gap-6 mb-8 px-3">
+          {[...partnersRow1, ...partnersRow1, ...partnersRow1, ...partnersRow1].map((partner, index) => (
             <div 
               key={index}
-              className="shrink-0 w-44 md:w-60 h-24 md:h-28 bg-[#FDFDFD] border border-gray-100 rounded-3xl flex items-center justify-center p-8 transition-all duration-500 hover:shadow-xl hover:shadow-blue-500/5 hover:border-blue-100 group"
+              className="flex-shrink-0 w-44 md:w-60 h-24 md:h-28 bg-[#FDFDFD] border border-gray-100 rounded-3xl flex items-center justify-center p-8 transition-all duration-500 hover:shadow-xl hover:shadow-blue-500/5 hover:border-blue-100 group mx-3"
             >
               <div className="relative w-full h-full transition-transform duration-500 group-hover:scale-110">
                  <Image 
@@ -79,11 +86,12 @@ export default function Clients() {
           ))}
         </div>
 
-        <div className="flex w-max animate-scroll-right gap-6 px-6">
-          {[...partnersRow2, ...partnersRow2, ...partnersRow2].map((partner, index) => (
+        {/* LINHA 2 */}
+        <div className="animate-scroll-right gap-6 px-3">
+          {[...partnersRow2, ...partnersRow2, ...partnersRow2, ...partnersRow2].map((partner, index) => (
             <div 
               key={index}
-              className="shrink-0 w-44 md:w-60 h-24 md:h-28 bg-[#FDFDFD] border border-gray-100 rounded-3xl flex items-center justify-center p-8 transition-all duration-500 hover:shadow-xl hover:shadow-blue-500/5 hover:border-blue-100 group"
+              className="flex-shrink-0 w-44 md:w-60 h-24 md:h-28 bg-[#FDFDFD] border border-gray-100 rounded-3xl flex items-center justify-center p-8 transition-all duration-500 hover:shadow-xl hover:shadow-blue-500/5 hover:border-blue-100 group mx-3"
             >
               <div className="relative w-full h-full transition-transform duration-500 group-hover:scale-110">
                  <Image 

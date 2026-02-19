@@ -22,7 +22,7 @@ export default function About() {
   };
 
   return (
-    <section id="sobre" className="relative bg-[#F8F9FA] pt-32 pb-24 rounded-[2.5rem] md:rounded-[4rem] -mt-12 mb-12 z-20 shadow-[0_0_80px_rgba(0,0,0,0.5)]">
+    <section id="sobre" className="relative bg-[#F8F9FA] pt-32 pb-24 rounded-[2.5rem] md:rounded-[4rem] -mt-12 mb-12 mx-4 md:mx-8 xl:mx-auto max-w-[96%] xl:max-w-[90rem] z-20 shadow-[0_0_80px_rgba(0,0,0,0.5)]">
       <div className="container mx-auto px-6 max-w-6xl">
         <motion.div 
           initial="hidden"

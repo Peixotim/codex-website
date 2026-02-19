@@ -1,3 +1,4 @@
+import About from "@/components/about";
 import Header from "@/components/header";
 import Hero from "@/components/hero";
 
@@ -11,10 +12,8 @@ export default function Home() {
 
       {/* 2. Primeira Dobra (Hero Section) */}
       <Hero />
-
-      {/* As próximas seções entrarão aqui, naturalmente uma debaixo da outra */}
       
-      {/* <Servicos /> */}
+      <About/>
       
       {/* <Sobre /> */}
       

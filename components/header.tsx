@@ -64,7 +64,7 @@ export default function Header() {
           href="https://wa.me/5531989774224"
           target="_blank"
           rel="noopener noreferrer"
-          className="hidden md:flex items-center gap-2 bg-[#0000FF] text-[#FFFFFF] px-6 py-2.5 rounded-full font-medium transition-all duration-300 hover:bg-white hover:text-black hover:-translate-y-0.10"
+          className="hidden md:flex items-center gap-2 bg-[#0022ff] text-[#FFFFFF] px-6 py-2.5 rounded-full font-medium transition-all duration-300 hover:bg-white hover:text-black hover:-translate-y-0.10"
         >
           <MessageCircle size={18} />
           Falar no WhatsApp
@@ -109,7 +109,7 @@ export default function Header() {
           href="https://wa.me/5531989774224"
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-6 flex items-center gap-2 bg-[#0000FF] text-[#FFFFFF] px-8 py-3 rounded-full font-medium active:scale-95 transition-all"
+          className="mt-6 flex items-center gap-2 bg-[#0022ff] text-[#FFFFFF] px-8 py-3 rounded-full font-medium active:scale-95 transition-all"
         >
           <MessageCircle size={20} />
           Falar no WhatsApp

@@ -23,15 +23,11 @@ export default function Hero() {
   };
 
   return (
-    // Removido o min-h-[95vh] fixo para deixar o conteúdo ditar a altura de forma mais orgânica,
-    // e aumentado o pb-40 para o mockup respirar antes da seção branca (Sobre) subir.
     <section className="relative flex flex-col items-center justify-start overflow-hidden bg-[#000000] pt-36 pb-40">
       
-      {/* BACKGROUND ARCHITECTURAL GRID */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff0a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0a_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_10%,#000_60%,transparent_100%)] z-0 pointer-events-none"></div>
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff0a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0a_1px,transparent_1px)] bg-size-[4rem_4rem] mask-[radial-gradient(ellipse_60%_50%_at_50%_10%,#000_60%,transparent_100%)] z-0 pointer-events-none"></div>
     
-      {/* BRILHO CENTRAL (Ajustado para não ofuscar o texto) */}
-      <div className="absolute top-[10%] left-1/2 -translate-x-1/2 w-[600px] md:w-[900px] h-[500px] bg-[#0000FF] rounded-full blur-[140px] opacity-20 pointer-events-none animate-pulse-slow z-0"></div>
+      <div className="absolute top-[10%] left-1/2 -translate-x-1/2 w-150 md:w-225 h-125 bg-[#0000FF] rounded-full blur-[140px] opacity-20 pointer-events-none animate-pulse-slow z-0"></div>
 
       <div className="container mx-auto px-6 relative z-10 flex flex-col items-center text-center w-full">
         
@@ -41,7 +37,7 @@ export default function Hero() {
           animate="visible"
           className="max-w-5xl mx-auto w-full flex flex-col items-center"
         >
-          {/* TAGLINE COM PULSING DOT */}
+          
           <motion.div variants={itemVariants} className="mb-8 flex justify-center">
             <span className="flex items-center gap-2 px-5 py-2 rounded-full border border-white/10 bg-white/5 text-sm font-medium text-gray-300 backdrop-blur-md shadow-[0_0_20px_rgba(0,0,255,0.1)]">
               <span className="relative flex h-2 w-2">
@@ -52,18 +48,16 @@ export default function Hero() {
             </span>
           </motion.div>
 
-          {/* TÍTULO (Gradiente mais claro e legível) */}
           <motion.h1 
             variants={itemVariants}
             className="text-4xl sm:text-6xl md:text-[5rem] font-extrabold text-[#FFFFFF] tracking-tight leading-[1.05] mb-8"
           >
             Vamos construir algo <br className="hidden sm:block" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-br from-[#9999FF] via-[#4D4DFF] to-[#0000FF] drop-shadow-[0_0_20px_rgba(0,0,255,0.4)]">
+            <span className="text-transparent bg-clip-text bg-linear-to-br from-[#9999FF] via-[#4D4DFF] to-[#0000FF] drop-shadow-[0_0_20px_rgba(0,0,255,0.4)]">
               realmente grande?
             </span>
           </motion.h1>
 
-          {/* SUBTÍTULO */}
           <motion.p 
             variants={itemVariants}
             className="text-base sm:text-lg md:text-xl text-gray-400 mb-10 max-w-2xl mx-auto font-light leading-relaxed px-4"
@@ -71,7 +65,6 @@ export default function Hero() {
             Sua marca pode ir mais longe. Criamos estratégias de educação e marketing que conectam presença online e conversão em um único fluxo.
           </motion.p>
 
-          {/* BOTÕES DE AÇÃO */}
           <motion.div 
             variants={itemVariants}
             className="flex flex-col sm:flex-row items-center justify-center gap-5 w-full sm:w-auto px-4 z-20 mb-16 md:mb-24"
@@ -80,7 +73,7 @@ export default function Hero() {
               href="https://wa.me/5531989774224"
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative flex items-center justify-center gap-2 bg-[#0000FF] text-[#FFFFFF] px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:bg-[#3333FF] shadow-[inset_0_1px_0_rgba(255,255,255,0.3),0_0_30px_-5px_rgba(0,0,255,0.6)] hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.4),0_0_40px_-5px_rgba(0,0,255,0.8)] hover:-translate-y-1 w-full sm:w-auto"
+              className="group relative flex items-center justify-center gap-2 bg-[#0000FF] text-[#FFFFFF] px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:bg-white hover:text-black hover:-translate-y-1 w-full sm:w-auto"
             >
               Falar com um Especialista
               <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform duration-300" />
@@ -94,7 +87,6 @@ export default function Hero() {
             </Link>
           </motion.div>
 
-          {/* INDICADOR DE SCROLL (Movido para cima do Dashboard) */}
           <motion.div 
             variants={itemVariants}
             className="flex flex-col items-center gap-2 text-gray-500 z-20 mb-12"

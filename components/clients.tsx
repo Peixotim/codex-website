@@ -66,16 +66,14 @@ export default function Clients() {
         </motion.div>
       </div>
 
-      <div className="relative w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_15%,black_85%,transparent)]">
+      <div className="relative w-full overflow-hidden mask-[linear-gradient(to_right,transparent,black_15%,black_85%,transparent)]">
         
         <div className="animate-scroll-left gap-6 mb-8 px-3">
           {[...partnersRow1, ...partnersRow1, ...partnersRow1, ...partnersRow1].map((partner, index) => (
             <div 
               key={index}
-              /* Removemos o p-8 daqui para controlar o tamanho apenas na div interna */
               className="shrink-0 w-48 md:w-64 h-24 md:h-28 bg-[#FDFDFD] border border-gray-100 rounded-3xl flex items-center justify-center transition-all duration-500 hover:shadow-xl hover:shadow-blue-500/5 hover:border-blue-100 group mx-3"
             >
-              {/* ZONA SEGURA DA LOGO: Fixamos uma largura e altura máxima (w-32 e h-12) */}
               <div className="relative w-28 md:w-36 h-10 md:h-12 transition-transform duration-500 group-hover:scale-110">
                  <Image 
                    src={partner.logo} 
@@ -93,10 +91,8 @@ export default function Clients() {
           {[...partnersRow2, ...partnersRow2, ...partnersRow2, ...partnersRow2].map((partner, index) => (
             <div 
               key={index}
-              /* Mesma lógica para a linha de baixo */
               className="shrink-0 w-48 md:w-64 h-24 md:h-28 bg-[#FDFDFD] border border-gray-100 rounded-3xl flex items-center justify-center transition-all duration-500 hover:shadow-xl hover:shadow-blue-500/5 hover:border-blue-100 group mx-3"
             >
-              {/* ZONA SEGURA DA LOGO */}
               <div className="relative w-28 md:w-36 h-10 md:h-12 transition-transform duration-500 group-hover:scale-110">
                  <Image 
                    src={partner.logo} 

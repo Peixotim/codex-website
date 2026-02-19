@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono , Plus_Jakarta_Sans} from "next/font/google";
+import { Geist, Geist_Mono , Plus_Jakarta_Sans, Sora} from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header";
 
@@ -12,6 +12,11 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
+
+const sora = Sora({
+  subsets:['latin'],
+  variable:"--font-sora"
+})
 
 const jakarta = Plus_Jakarta_Sans({ subsets: ['latin'] });
 
@@ -28,7 +33,7 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <body
-        className={`${jakarta}`} //${geistSans.variable} ${geistMono.variable} antialiased
+        className={`${sora.variable} font-sans`} //${geistSans.variable} ${geistMono.variable} antialiased
       >
         <Header/>
         {children}

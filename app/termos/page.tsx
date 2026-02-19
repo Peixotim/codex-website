@@ -50,7 +50,7 @@ export default function TermsPage() {
     <main className="min-h-screen bg-[#000000] text-gray-300 pt-32 pb-40 relative overflow-hidden">
       
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-size-[4rem_4rem] mask-[radial-gradient(ellipse_80%_100%_at_50%_0%,#000_40%,transparent_100%)] pointer-events-none z-0"></div>
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-[#0000FF]/15 rounded-full blur-[150px] pointer-events-none z-0"></div>
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-200 h-125 bg-[#0000FF]/15 rounded-full blur-[150px] pointer-events-none z-0"></div>
 
       <div className="container mx-auto px-6 max-w-7xl relative z-10">
         <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} className="mb-12">
@@ -77,7 +77,7 @@ export default function TermsPage() {
                     variants={fadeInUp}
                     key={index}
                     href={`#${item.id}`}
-                    className="text-sm text-gray-500 hover:text-[#0000FF] transition-colors py-1 relative before:absolute before:left-[-17px] before:top-1/2 before:-translate-y-1/2 before:w-[2px] before:h-0 before:bg-[#0000FF] hover:before:h-full before:transition-all"
+                    className="text-sm text-gray-500 hover:text-[#0000FF] transition-colors py-1 relative before:absolute before:-left-4.25 before:top-1/2 before:-translate-y-1/2 before:w-0.5 before:h-0 before:bg-[#0000FF] hover:before:h-full before:transition-all"
                   >
                     {item.title}
                   </motion.a>
@@ -122,11 +122,11 @@ export default function TermsPage() {
                     A Codex atua como provedora de infraestrutura digital de alta conversão, automação inteligente e estratégias de captação de tráfego pago. Nosso compromisso inegociável é com a excelência técnica.
                   </p>
                   <ul className="space-y-4 mt-6">
-                    <li className="flex items-start gap-3 bg-white/[0.02] border border-white/5 p-4 rounded-2xl">
+                    <li className="flex items-start gap-3 bg-white/2 border border-white/5 p-4 rounded-2xl">
                       <CheckCircle2 size={24} className="text-[#0000FF] shrink-0" />
                       <span><strong className="text-white font-medium">Natureza Variável:</strong> O Cliente reconhece que o marketing digital envolve leilões em tempo real. Não garantimos resultados financeiros exatos (ROI/ROAS fixos), mas arquitetamos o melhor cenário estatístico para o sucesso.</span>
                     </li>
-                    <li className="flex items-start gap-3 bg-white/[0.02] border border-white/5 p-4 rounded-2xl">
+                    <li className="flex items-start gap-3 bg-white/2 border border-white/5 p-4 rounded-2xl">
                       <CheckCircle2 size={24} className="text-[#0000FF] shrink-0" />
                       <span><strong className="text-white font-medium">Plataformas de Terceiros:</strong> Não nos responsabilizamos por bloqueios de contas de anúncios originados pelas políticas do Meta ou Google, nem por instabilidades nas APIs de WhatsApp.</span>
                     </li>

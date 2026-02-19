@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Sora, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header";
+import { Analytics } from "@vercel/analytics/next";
 
 // Fontes configuradas para o padrão premium
 const sora = Sora({
@@ -31,6 +32,7 @@ export default function RootLayout({
       >
         <Header/>
         {children}
+        <Analytics />
       </body>
     </html>
   );

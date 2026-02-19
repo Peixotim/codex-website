@@ -53,7 +53,7 @@ export default function Header() {
             Sobre
           </Link>
           <Link 
-            href="#contato" 
+            href="/contato" 
             className="text-sm font-medium text-gray-300 px-4 py-2.5 rounded-xl transition-all duration-300 hover:text-white hover:bg-white/5"
           >
             Contato
@@ -98,7 +98,7 @@ export default function Header() {
           Sobre
         </Link>
         <Link 
-          href="#contato" 
+          href="/contato" 
           className="text-gray-300 text-lg font-medium py-3 w-full text-center hover:text-white hover:bg-white/5 transition-colors"
           onClick={() => setIsMobileMenuOpen(false)}
         >

@@ -22,6 +22,7 @@ const partnersRow2 = [
   { id: 13, name: "Empresa 2", logo: "/logos/logo12.png" },
   { id: 14, name: "Empresa 2", logo: "/logos/logo13.png" },
   { id: 15, name: "Empresa 2", logo: "/logos/logo14.png" },
+  { id: 15, name: "Empresa 2", logo: "/logos/logo15.png" },
 ];
 
 export default function Clients() {

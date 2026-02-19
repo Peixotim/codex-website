@@ -64,15 +64,13 @@ export default function Clients() {
         </motion.div>
       </div>
 
-      {/* Máscara de transparência nas bordas melhorada para suavidade visual */}
-      <div className="relative w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_15%,black_85%,transparent)]">
+      <div className="relative w-full overflow-hidden mask-[linear-gradient(to_right,transparent,black_15%,black_85%,transparent)]">
         
-        {/* LINHA 1 */}
         <div className="animate-scroll-left gap-6 mb-8 px-3">
           {[...partnersRow1, ...partnersRow1, ...partnersRow1, ...partnersRow1].map((partner, index) => (
             <div 
               key={index}
-              className="flex-shrink-0 w-44 md:w-60 h-24 md:h-28 bg-[#FDFDFD] border border-gray-100 rounded-3xl flex items-center justify-center p-8 transition-all duration-500 hover:shadow-xl hover:shadow-blue-500/5 hover:border-blue-100 group mx-3"
+              className="shrink-0 w-44 md:w-60 h-24 md:h-28 bg-[#FDFDFD] border border-gray-100 rounded-3xl flex items-center justify-center p-8 transition-all duration-500 hover:shadow-xl hover:shadow-blue-500/5 hover:border-blue-100 group mx-3"
             >
               <div className="relative w-full h-full transition-transform duration-500 group-hover:scale-110">
                  <Image 
@@ -86,12 +84,11 @@ export default function Clients() {
           ))}
         </div>
 
-        {/* LINHA 2 */}
         <div className="animate-scroll-right gap-6 px-3">
           {[...partnersRow2, ...partnersRow2, ...partnersRow2, ...partnersRow2].map((partner, index) => (
             <div 
               key={index}
-              className="flex-shrink-0 w-44 md:w-60 h-24 md:h-28 bg-[#FDFDFD] border border-gray-100 rounded-3xl flex items-center justify-center p-8 transition-all duration-500 hover:shadow-xl hover:shadow-blue-500/5 hover:border-blue-100 group mx-3"
+              className="shrink-0 w-44 md:w-60 h-24 md:h-28 bg-[#FDFDFD] border border-gray-100 rounded-3xl flex items-center justify-center p-8 transition-all duration-500 hover:shadow-xl hover:shadow-blue-500/5 hover:border-blue-100 group mx-3"
             >
               <div className="relative w-full h-full transition-transform duration-500 group-hover:scale-110">
                  <Image 

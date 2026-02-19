@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { Instagram, Linkedin, MessageCircle, Mail, ArrowUpRight } from 'lucide-react';
+import { Instagram, MessageCircle, Mail, ArrowUpRight } from 'lucide-react';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
